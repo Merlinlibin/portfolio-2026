@@ -31,6 +31,18 @@ export function Background() {
         <span className="orb orb-2" />
         <span className="orb orb-3" />
         <div className="bg-grid" />
+        <div className="code-floaters">
+          <span className="cf f1">{'const'}</span>
+          <span className="cf f2">{'() => {}'}</span>
+          <span className="cf f3">{'</>'}</span>
+          <span className="cf f4">{'async/await'}</span>
+          <span className="cf f5">{'{ ...props }'}</span>
+          <span className="cf f6">{'npm run dev'}</span>
+          <span className="cf f7">{'git push'}</span>
+          <span className="cf f8">{'0 1 0 1'}</span>
+          <span className="cf f9">{'<Merlin />'}</span>
+          <span className="cf f10">{'return ()'}</span>
+        </div>
         <div className="bg-noise" />
       </div>
       <div className="cursor-glow" ref={glowRef} aria-hidden="true" />

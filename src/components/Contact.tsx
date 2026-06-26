@@ -1,5 +1,6 @@
 import { Reveal } from './ui/Reveal';
 import { ContactForm } from './ContactForm';
+import { Terminal } from './Terminal';
 import { profile } from '../data/content';
 import { MailIcon, WhatsappIcon, GithubIcon, LinkedinIcon } from './ui/Icons';
 
@@ -20,41 +21,25 @@ export function Contact() {
           </p>
 
           <div className="contact-layout">
-            <div className="contact-aside">
-              <a className="contact-line" href={`mailto:${profile.email}`}>
-                <span className="contact-line-icon">
-                  <MailIcon size={18} />
-                </span>
-                <span>
-                  <small>Email</small>
-                  {profile.email}
-                </span>
-              </a>
-              <a
-                className="contact-line"
-                href={profile.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="contact-line-icon">
-                  <WhatsappIcon size={18} />
-                </span>
-                <span>
-                  <small>WhatsApp</small>
-                  {profile.phoneDisplay}
-                </span>
-              </a>
-              <div className="contact-aside-socials">
-                <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <GithubIcon size={18} />
-                </a>
-                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <LinkedinIcon size={18} />
-                </a>
-              </div>
+            <div className="contact-terminal">
+              <Terminal />
             </div>
-
             <ContactForm />
+          </div>
+
+          <div className="contact-quicklinks">
+            <a className="quicklink" href={`mailto:${profile.email}`}>
+              <MailIcon size={16} /> Email
+            </a>
+            <a className="quicklink" href={profile.whatsapp} target="_blank" rel="noopener noreferrer">
+              <WhatsappIcon size={16} /> WhatsApp
+            </a>
+            <a className="quicklink" href={profile.github} target="_blank" rel="noopener noreferrer">
+              <GithubIcon size={16} /> GitHub
+            </a>
+            <a className="quicklink" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+              <LinkedinIcon size={16} /> LinkedIn
+            </a>
           </div>
         </Reveal>
       </div>

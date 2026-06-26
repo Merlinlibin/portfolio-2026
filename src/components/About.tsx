@@ -1,4 +1,5 @@
 import { Reveal } from './ui/Reveal';
+import { CodeWindow } from './CodeWindow';
 import { useCountUp } from '../hooks/useCountUp';
 import { useTilt } from '../hooks/useTilt';
 import { aboutChips, stats, type Stat } from '../data/content';
@@ -52,12 +53,16 @@ export function About() {
             </div>
           </Reveal>
 
-          <Reveal className="stats">
-            {stats.map((stat) => (
-              <StatCard stat={stat} key={stat.label} />
-            ))}
+          <Reveal className="about-code">
+            <CodeWindow />
           </Reveal>
         </div>
+
+        <Reveal className="stats-strip">
+          {stats.map((stat) => (
+            <StatCard stat={stat} key={stat.label} />
+          ))}
+        </Reveal>
       </div>
     </section>
   );
