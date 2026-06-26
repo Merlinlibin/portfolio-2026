@@ -136,7 +136,7 @@ button { font-family: inherit; }
 /* ============================================================
    Nav
    ============================================================ */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; transition: all .35s var(--ease); }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; transition: all .35s var(--ease); padding-inline: clamp(12px, 4vw, 40px); }
 /* Fading masthead so scrolling content doesn't peek around the floating nav pill */
 .nav::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 96px; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .35s var(--ease);
   background: linear-gradient(to bottom, var(--bg) 35%, rgba(8,8,12,0) 100%); }
@@ -147,7 +147,6 @@ button { font-family: inherit; }
   display: flex; align-items: center; gap: 20px;
   max-width: var(--maxw); margin: 14px auto 0; padding: 11px 14px 11px 18px;
   border: 1px solid transparent; border-radius: 16px; transition: all .35s var(--ease);
-  margin-inline: clamp(12px, 4vw, 40px);
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-right: auto; }
 .logo-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--grad); color: #fff; font-weight: 700; box-shadow: 0 6px 18px -4px rgba(139,92,246,.6); }
@@ -170,7 +169,7 @@ button { font-family: inherit; }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.nav-mobile { display: none; flex-direction: column; gap: 4px; margin: 8px clamp(12px,4vw,40px) 0; padding: 0 12px; border-radius: 16px; background: rgba(10,10,16,.92); backdrop-filter: blur(16px); border: 1px solid transparent; max-height: 0; overflow: hidden; opacity: 0; transition: all .35s var(--ease); }
+.nav-mobile { display: none; flex-direction: column; gap: 4px; max-width: var(--maxw); margin: 8px auto 0; padding: 0 12px; border-radius: 16px; background: rgba(10,10,16,.92); backdrop-filter: blur(16px); border: 1px solid transparent; max-height: 0; overflow: hidden; opacity: 0; transition: all .35s var(--ease); }
 .nav-mobile.open { max-height: 320px; opacity: 1; padding: 12px; border-color: var(--border); }
 .nav-mobile a { padding: 12px 14px; border-radius: 10px; color: var(--text-soft); font-weight: 500; }
 .nav-mobile a:hover { background: var(--surface); color: var(--text); }
