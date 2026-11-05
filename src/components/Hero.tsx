@@ -1,7 +1,7 @@
 import { Reveal } from './ui/Reveal';
 import { useTypewriter } from '../hooks/useTypewriter';
-import { useTilt } from '../hooks/useTilt';
 import { profile, roles } from '../data/content';
+import { Hero3D } from './Hero3D';
 import {
   ArrowRight,
   DownloadIcon,
@@ -9,8 +9,6 @@ import {
   LinkedinIcon,
   MailIcon,
   WhatsappIcon,
-  ReactLogo,
-  NodeLogo,
 } from './ui/Icons';
 
 const techStrip = [
@@ -20,7 +18,6 @@ const techStrip = [
 
 export function Hero() {
   const typed = useTypewriter(roles);
-  const tiltRef = useTilt<HTMLDivElement>(7);
 
   return (
     <section className="hero" id="hero">
@@ -75,30 +72,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal className="hero-visual">
-          <div className="avatar-wrap" ref={tiltRef}>
-            <div className="avatar-glow" />
-            <div className="avatar-ring" />
-            <img
-              src="assets/profile.jpg"
-              alt="Portrait of Merlin Libin"
-              className="avatar-img"
-              onError={(e) => {
-                const img = e.currentTarget;
-                img.style.display = 'none';
-                const fb = img.nextElementSibling as HTMLElement | null;
-                if (fb) fb.style.display = 'grid';
-              }}
-            />
-            <div className="avatar-fallback" style={{ display: 'none' }}>
-              ML
-            </div>
-            <span className="badge badge-react" title="React">
-              <ReactLogo />
-            </span>
-            <span className="badge badge-node" title="Node.js">
-              <NodeLogo />
-            </span>
-          </div>
+          <Hero3D />
         </Reveal>
       </div>
 

@@ -249,9 +249,24 @@ button { font-family: inherit; }
 .avatar-ring { position: absolute; inset: -3%; border-radius: 50%; border: 2px solid transparent; background: var(--grad) border-box; -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spin 16s linear infinite; opacity: .85; }
 .avatar-img, .avatar-fallback { position: absolute; inset: 6%; width: 88%; height: 88%; border-radius: 50%; object-fit: cover; object-position: center top; border: 1px solid var(--border-2); box-shadow: var(--shadow); }
 .avatar-fallback { display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 5rem; font-weight: 700; color: #fff; background: var(--grad); }
-.badge { position: absolute; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(12,12,20,.85); backdrop-filter: blur(10px); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.badge { position: absolute; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(12,12,20,.85); backdrop-filter: blur(10px); border: 1px solid var(--border); box-shadow: var(--shadow); z-index: 3; }
 .badge-react { top: 8%; right: -6%; animation: bob 4s ease-in-out infinite; }
 .badge-node { bottom: 10%; left: -8%; animation: bob 4s ease-in-out infinite .6s; }
+
+/* ---------- Hero 3D scene ---------- */
+.hero3d-wrap { position: relative; width: clamp(320px, 42vw, 580px); aspect-ratio: 1; display: grid; place-items: center; }
+.hero3d-wrap .avatar-wrap { width: clamp(250px, 26vw, 330px); }
+.hero3d-canvas { position: absolute; inset: 0; z-index: 2; }
+.hero3d-canvas canvas { display: block; width: 100% !important; height: 100% !important; }
+.hero3d-glow { position: absolute; inset: 26%; border-radius: 50%; background: var(--grad); filter: blur(52px); opacity: .32; animation: glowpulse 5s ease-in-out infinite; z-index: 1; }
+.hero3d-wrap .badge-react { top: 21%; right: 17%; }
+.hero3d-wrap .badge-node { bottom: 19%; left: 17%; }
+@media (max-width: 860px) {
+  .hero3d-wrap { width: min(86vw, 420px); }
+  .hero3d-wrap .badge { width: 48px; height: 48px; }
+  .hero3d-wrap .badge-react { top: 19%; right: 13%; }
+  .hero3d-wrap .badge-node { bottom: 17%; left: 13%; }
+}
 @keyframes bob { 50% { transform: translateY(-12px); } }
 
 /* Marquee */
